@@ -35,3 +35,12 @@ out/
 
 ### VS Code ###
 .vscode/
+
+/node_modules
+/scheduler-frontend/node_modules
+/scheduler-frontend/dist
+/scheduler-frontend/tmp
+/scheduler-frontend/out-tsc
+/scheduler-frontend/bazel-out
+
+/scheduler-frontend/.angular/cache
