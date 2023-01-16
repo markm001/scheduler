@@ -7,11 +7,13 @@ import { TeamComponent } from './team/team.component';
 import {HttpClientModule} from "@angular/common/http";
 import {InMemoryWebApiModule} from "angular-in-memory-web-api";
 import {InMemoryDataService} from "./in-memory-data.service";
+import { MemberComponent } from './member/member.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TeamComponent
+    TeamComponent,
+    MemberComponent
   ],
   imports: [
     BrowserModule,

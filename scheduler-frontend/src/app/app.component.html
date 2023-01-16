@@ -317,8 +317,10 @@
   <!-- Resources -->
   <h1>{{ title }} app is running!</h1>
 
-  <app-team></app-team>
-
+  <nav>
+    <a routerLink="/teams">View Teams</a>
+  </nav>
+  <router-outlet></router-outlet>
 
   <!-- Footer -->
   <footer>
@@ -348,5 +350,3 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-<router-outlet></router-outlet>

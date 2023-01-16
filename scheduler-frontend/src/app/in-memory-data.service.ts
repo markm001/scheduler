@@ -12,7 +12,13 @@ export class InMemoryDataService implements InMemoryDbService{
         { id: 'b2', teamname:'Team-2' },
         { id: 'b3', teamname:'Team-3' }
     ]
+
+    const members = [
+      { id: 'a1', nickname: 'Member-1' },
+      { id: 'a2', nickname: 'Member-2' }
+    ]
+
     //return the data as object with: { }
-    return {teams}
+    return {teams, members}
   }
 }
