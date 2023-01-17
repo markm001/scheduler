@@ -1,0 +1,66 @@
+.colors {
+  color: #274C77;
+  color: #6096BA;
+  color: #A3CEF1;
+  color: #A06B9A;
+  color: #700548;
+}
+
+.header {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #274C77;
+  color: white;
+  font-weight: 600;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+.header h1 {
+  display:none;
+}
+@media screen and (min-width: 35em){
+  .header h1 {
+    display: unset;
+  }
+}
+.header img {
+  width: 10rem;
+  margin-left: -1rem;
+}
+.header a {
+  text-decoration: none;
+  color: #A3CEF1;
+  font-size: 1.25rem;
+}
+
+nav {
+  background-color: #6096BA;
+}
+nav a {
+  text-decoration: none;
+  color: #A3CEF1;
+  font-size: 1.5rem;
+  margin: 0.5rem;
+  display: inline-block;
+}
+
+.content {
+  text-align: center;
+  padding: 0.5em;
+}
+
+footer {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  line-height: 20px;
+}
+footer a {
+  display: flex;
+  align-items: center;
+}
+

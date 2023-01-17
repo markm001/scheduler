@@ -1,0 +1,9 @@
+.members {
+  list-style: none;
+  margin: 0.5rem;
+  display: inline-block;
+}
+
+.members li {
+  padding: 0.25rem;
+}
