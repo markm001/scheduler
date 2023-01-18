@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'scheduler-frontend'`, () => {
+  it(`should have as title 'Scheduler Application'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('scheduler-frontend');
+    expect(app.title).toEqual('Scheduler Application');
   });
 
-  it('should render title', () => {
+  it('should render the title in an h1-tag.', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('scheduler-frontend app is running!');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Scheduler Application');
   });
 });
