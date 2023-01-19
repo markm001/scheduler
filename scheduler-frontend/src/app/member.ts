@@ -1,9 +1,7 @@
 export class Member {
-  id: String
-  nickname: String
+  constructor(
+    public id: String,
+    public nickname: String) {
 
-  constructor(id:String, nickname:String) {
-    this.id = id
-    this.nickname = nickname
   }
 }
