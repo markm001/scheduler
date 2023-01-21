@@ -8,8 +8,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {InMemoryWebApiModule} from "angular-in-memory-web-api";
 import {InMemoryDataService} from "./in-memory-data.service";
 import {MemberComponent} from './member/member.component';
-
-const ENV = 'prod'
+import {environment} from "../environments/environment";
 
 @NgModule({
   declarations: [
@@ -21,7 +20,7 @@ const ENV = 'prod'
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ENV == 'prod' ? [] : InMemoryWebApiModule.forRoot(
+    environment.production ? [] : InMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     )
   ],

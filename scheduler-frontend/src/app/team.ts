@@ -1,6 +1,6 @@
 export class Team {
   constructor(
-    public id: String,
-    public teamname: String ) {
+    public id: string,
+    public teamname: string ) {
   }
 }

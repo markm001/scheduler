@@ -14,7 +14,7 @@ export class MemberService {
 
   getMembers(teamId: String): Observable<Member[]> {
     console.log('Fetching Team-Members for Id:' + teamId)
-    let url = 'api/members'
+    let url = 'api/teams/'+ teamId +'/members'
     return this.client.get<Member[]>(url)
   }
 }

@@ -37,7 +37,7 @@ tasks.withType<Test> {
 
 tasks.bootJar {
 	from("scheduler-frontend/dist/scheduler-frontend") {
-		include("*")
+		include("**/*")
 		into("public")
 	}
 }

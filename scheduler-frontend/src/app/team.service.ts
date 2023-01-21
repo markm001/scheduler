@@ -13,7 +13,9 @@ export class TeamService {
   ) { }
 
   getTeamsForCurrentUser(): Observable<Team[]> {
-    let url = 'api/teams'
+    const userId = 'todo'
+
+    let url = 'api/users/' + userId + '/teams'
 
     return this.client.get<Team[]>(url)
   }
