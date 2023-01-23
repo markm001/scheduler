@@ -8,17 +8,20 @@
   </a>
   <h1>{{ title }}</h1>
 
-  <a href="#">Login</a>
+  <asl-google-signin-button
+    type="standard" size='medium' *ngIf="!user"></asl-google-signin-button>
+
+  <span (click)="socialSignOut()" *ngIf="user">Logout</span>
 </div>
 
-
 <nav role="navigation">
-  <a routerLink="/teams">View Teams</a>
+  <p *ngIf="!user">Please log in to view your Teams.</p>
+  <a routerLink="/teams" *ngIf="user">View Teams</a>
 </nav>
 
 
 <div class="content" role="main">
-  <router-outlet></router-outlet>
+  <router-outlet *ngIf="user"></router-outlet>
 
   <!-- Footer -->
   <footer>

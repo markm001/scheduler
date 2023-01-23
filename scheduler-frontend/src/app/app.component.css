@@ -37,10 +37,11 @@
   font-size: 1.25rem;
 }
 
-nav {
+nav, .prompt {
+  text-align: center;
   background-color: #6096BA;
 }
-nav a {
+nav > * {
   text-decoration: none;
   color: #A3CEF1;
   font-size: 1.5rem;
