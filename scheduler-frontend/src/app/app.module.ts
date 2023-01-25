@@ -4,12 +4,17 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {TeamComponent} from './team/team.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {InMemoryWebApiModule} from "angular-in-memory-web-api";
 import {InMemoryDataService} from "./in-memory-data.service";
 import {MemberComponent} from './member/member.component';
 import {environment} from "../environments/environment";
 import {GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule} from '@abacritt/angularx-social-login';
+import {TokenInterceptor} from "./token.interceptor";
+
+export const httpInterceptorProviders = [
+  { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+];
 
 @NgModule({
   declarations: [
@@ -33,12 +38,15 @@ import {GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule} from '@
       providers: [{
         id: GoogleLoginProvider.PROVIDER_ID,
         provider: new GoogleLoginProvider('330715887976-c5b9r5v68o73k1uqohddc4sgev8mu02j.apps.googleusercontent.com')
-      }],
+      }
+      ],
       onError: (err) => {
         console.log(err)
       }
     } as SocialAuthServiceConfig
-  }],
+  },
+    httpInterceptorProviders
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

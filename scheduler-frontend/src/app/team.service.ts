@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Observable, of} from "rxjs";
+import {Observable} from "rxjs";
 import {Team} from "./team";
 import {HttpClient} from "@angular/common/http";
 
@@ -13,9 +13,12 @@ export class TeamService {
   ) { }
 
   getTeamsForCurrentUser(): Observable<Team[]> {
-    const userId = 'todo'
+    //retrieve userId from localStorage
+    const userId = localStorage.getItem('userId')
 
     let url = 'api/users/' + userId + '/teams'
+
+    console.log(url)
 
     return this.client.get<Team[]>(url)
   }

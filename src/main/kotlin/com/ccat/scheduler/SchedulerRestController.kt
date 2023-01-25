@@ -1,17 +1,18 @@
 package com.ccat.scheduler
 
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/api")
 class SchedulerRestController {
-
     @GetMapping("/users/{id}/teams")
     fun getTeamsForUsers(
-        @PathVariable(name="id") userId:String): List<TeamEto> {
+        @PathVariable(name="id") userId:String,
+        @RequestHeader("Authorization") token:String
+    ): List<TeamEto> {
+        //TODO: REPLACE DEBUG OUTPUT
+        println(token)
+
         return listOf(
             TeamEto("abc", "Team A"),
             TeamEto("bcd", "Team B")
