@@ -1,22 +1,33 @@
 package com.ccat.scheduler
 
+import com.ccat.scheduler.service.TokenService
 import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/api")
-class SchedulerRestController {
+class SchedulerRestController(
+    private val tokenService: TokenService
+) {
     @GetMapping("/users/{id}/teams")
     fun getTeamsForUsers(
         @PathVariable(name="id") userId:String,
         @RequestHeader("Authorization") token:String
     ): List<TeamEto> {
-        //TODO: REPLACE DEBUG OUTPUT
-        println(token)
+        val userToken = tokenService.verifyToken(token)
 
-        return listOf(
+        val tokenUID: String = if(userToken != null) {
+            userToken.payload.subject
+        } else {
+            ""
+        }
+
+        return if(tokenUID == userId) { listOf(
             TeamEto("abc", "Team A"),
             TeamEto("bcd", "Team B")
-        )
+        ) }
+        else {
+            listOf()
+        }
     }
 
     @GetMapping("/teams/{id}/members")
